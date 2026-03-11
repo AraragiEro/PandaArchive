@@ -1,0 +1,158 @@
+{
+  "https://wiki.winterco.org/zh/rules/corp/admissions": {
+    "hash": "400e7178d9202ad3dd22abcc8cec60cc",
+    "updated_at": "2026-03-11T10:49:42.007494",
+    "title": "公司招募",
+    "category": "行政"
+  },
+  "https://wiki.winterco.org/zh/rules/corp/frtu": {
+    "hash": "fa40108cff9814e6e20fbd20fc2891ea",
+    "updated_at": "2026-03-11T10:49:43.278243",
+    "title": "FRTU管理",
+    "category": "行政"
+  },
+  "https://wiki.winterco.org/zh/rules/corp/frta": {
+    "hash": "05d6dbf0634e9650d3762bde200f69de",
+    "updated_at": "2026-03-11T10:49:44.548794",
+    "title": "FRTA管理",
+    "category": "行政"
+  },
+  "https://wiki.winterco.org/zh/rules/military/fleet_commander": {
+    "hash": "a3ee1a611d7549bfd5db7025a7c67fa1",
+    "updated_at": "2026-03-11T10:49:46.081651",
+    "title": "FC 解释和指南",
+    "category": "军事"
+  },
+  "https://wiki.winterco.org/zh/rules/military/pap": {
+    "hash": "2fd57116674c8e426eb3572328bc622e",
+    "updated_at": "2026-03-11T10:49:47.354701",
+    "title": "PAP (出勤)",
+    "category": "军事"
+  },
+  "https://wiki.winterco.org/zh/rules/military/srp": {
+    "hash": "6808e77c0b8a66b0af90ba51addb3b9a",
+    "updated_at": "2026-03-11T10:49:48.640999",
+    "title": "SRP (补损)",
+    "category": "军事"
+  },
+  "https://wiki.winterco.org/zh/rules/military/fleet": {
+    "hash": "e5c7757a9f408272206bfe24b064041f",
+    "updated_at": "2026-03-11T10:49:49.908830",
+    "title": "舰队规则",
+    "category": "军事"
+  },
+  "https://wiki.winterco.org/zh/rules/military/ping": {
+    "hash": "80072e7cb7e9497294bb8d812ac533f1",
+    "updated_at": "2026-03-11T10:49:51.214466",
+    "title": "集结信息发布",
+    "category": "军事"
+  },
+  "https://wiki.winterco.org/zh/rules/other/nip": {
+    "hash": "457991815263611acb61d846ef26e79e",
+    "updated_at": "2026-03-11T10:49:52.486727",
+    "title": "现有协议",
+    "category": "军事"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/start": {
+    "hash": "c8a36fe7dd375ccbdddc1b500e96077e",
+    "updated_at": "2026-03-11T10:49:53.772721",
+    "title": "生产规定",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/ratting": {
+    "hash": "215d737b264b92780d4549cf700269b3",
+    "updated_at": "2026-03-11T10:49:55.040051",
+    "title": "刷怪规定",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/special": {
+    "hash": "c5093672a4fa26018c715bd65cc9cba0",
+    "updated_at": "2026-03-11T10:49:56.561914",
+    "title": "特殊刷怪规定",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/mining": {
+    "hash": "2b22839ffe3bff4c93216a2d4768c411",
+    "updated_at": "2026-03-11T10:49:57.846666",
+    "title": "挖矿规定",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/ess": {
+    "hash": "94f43f89b537e1804db6bad0e3b12a89",
+    "updated_at": "2026-03-11T10:49:59.117999",
+    "title": "ESS 规则",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/crab": {
+    "hash": "206c44e8ad44485bb283f0486260bda9",
+    "updated_at": "2026-03-11T10:50:00.385650",
+    "title": "超期生产临时准则",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/public_moons": {
+    "hash": "57fb858342f49f8180a90cb38109da6a",
+    "updated_at": "2026-03-11T10:50:01.654795",
+    "title": "公共月矿采掘法规",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/moon_renting": {
+    "hash": "6629ac4268702af473765166f9e55d5a",
+    "updated_at": "2026-03-11T10:50:03.187697",
+    "title": "月亮租赁法规",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/pve/fw": {
+    "hash": "f2dc60e3b50be840d600bddda7729d57",
+    "updated_at": "2026-03-11T10:50:04.726295",
+    "title": "势力战争",
+    "category": "生产"
+  },
+  "https://wiki.winterco.org/zh/rules/trade/markets": {
+    "hash": "07dbd231af51b7ff479543e16c79e358",
+    "updated_at": "2026-03-11T10:50:06.167821",
+    "title": "市场条例",
+    "category": "贸易"
+  },
+  "https://wiki.winterco.org/zh/rules/trade/supercap_export": {
+    "hash": "7e7bc8a0c0b28e41ee2c945ed0e7361b",
+    "updated_at": "2026-03-11T10:50:07.578211",
+    "title": "超旗出口条例",
+    "category": "贸易"
+  },
+  "https://wiki.winterco.org/zh/rules/trade/hypernets": {
+    "hash": "9e9a94f3b34cb5f9b5b33e6e235332db",
+    "updated_at": "2026-03-11T10:50:09.727669",
+    "title": "超网博彩条例",
+    "category": "贸易"
+  },
+  "https://wiki.winterco.org/zh/rules/structure/citadels": {
+    "hash": "074c903b8225e2775b519bafa9a10dce",
+    "updated_at": "2026-03-11T10:50:11.164147",
+    "title": "堡垒条例",
+    "category": "建筑"
+  },
+  "https://wiki.winterco.org/zh/rules/structure/refineries": {
+    "hash": "0a7c7f21c6c1e110844938fe571e7c9c",
+    "updated_at": "2026-03-11T10:50:12.797061",
+    "title": "精炼厂法规",
+    "category": "建筑"
+  },
+  "https://wiki.winterco.org/zh/rules/structure/pocos": {
+    "hash": "8f18767ec27309f39267c2a01719e743",
+    "updated_at": "2026-03-11T10:50:14.408827",
+    "title": "天钩等建筑",
+    "category": "建筑"
+  },
+  "https://wiki.winterco.org/zh/rules/other/videos_and_lives": {
+    "hash": "4731a8f19624d4d5743c8f56b2fc68b9",
+    "updated_at": "2026-03-11T10:50:15.984286",
+    "title": "视频与直播",
+    "category": "其他"
+  },
+  "https://wiki.winterco.org/zh/rules/other/mumble": {
+    "hash": "5f951fd4730eb01848a240e1e8dfc09e",
+    "updated_at": "2026-03-11T10:50:17.559161",
+    "title": "Mumble 纪律",
+    "category": "其他"
+  }
+}

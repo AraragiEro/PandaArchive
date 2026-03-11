@@ -1,8 +1,8 @@
 # 市场条例
 
 > 来源: [FRT Wiki](https://wiki.winterco.org/zh/rules/trade/markets)
-> 分类: 贸易
-> 爬取时间: 2026-03-11 10:50:06
+> 分类: 其他
+> 爬取时间: 2026-03-11 10:23:54
 
 ---
 
