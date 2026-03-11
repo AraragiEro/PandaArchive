@@ -1,0 +1,159 @@
+{
+  "行政": [
+    {
+      "title": "公司招募",
+      "url": "https://wiki.winterco.org/zh/rules/corp/admissions",
+      "path": "https://wiki.winterco.org/zh/rules/corp/admissions"
+    },
+    {
+      "title": "FRTU管理",
+      "url": "https://wiki.winterco.org/zh/rules/corp/frtu",
+      "path": "https://wiki.winterco.org/zh/rules/corp/frtu"
+    },
+    {
+      "title": "FRTA管理",
+      "url": "https://wiki.winterco.org/zh/rules/corp/frta",
+      "path": "https://wiki.winterco.org/zh/rules/corp/frta"
+    }
+  ],
+  "军事": [
+    {
+      "title": "FC 解释和指南",
+      "url": "https://wiki.winterco.org/zh/rules/military/fleet_commander",
+      "path": "https://wiki.winterco.org/zh/rules/military/fleet_commander"
+    },
+    {
+      "title": "PAP (出勤)",
+      "url": "https://wiki.winterco.org/zh/rules/military/pap",
+      "path": "https://wiki.winterco.org/zh/rules/military/pap"
+    },
+    {
+      "title": "SRP (补损)",
+      "url": "https://wiki.winterco.org/zh/rules/military/srp",
+      "path": "https://wiki.winterco.org/zh/rules/military/srp"
+    },
+    {
+      "title": "舰队规则",
+      "url": "https://wiki.winterco.org/zh/rules/military/fleet",
+      "path": "https://wiki.winterco.org/zh/rules/military/fleet"
+    },
+    {
+      "title": "集结信息发布",
+      "url": "https://wiki.winterco.org/zh/rules/military/ping",
+      "path": "https://wiki.winterco.org/zh/rules/military/ping"
+    },
+    {
+      "title": "现有协议",
+      "url": "https://wiki.winterco.org/zh/rules/other/nip",
+      "path": "https://wiki.winterco.org/zh/rules/other/nip"
+    }
+  ],
+  "生产": [
+    {
+      "title": "生产规定",
+      "url": "https://wiki.winterco.org/zh/rules/pve/start",
+      "path": "https://wiki.winterco.org/zh/rules/pve/start"
+    },
+    {
+      "title": "刷怪规定",
+      "url": "https://wiki.winterco.org/zh/rules/pve/ratting",
+      "path": "https://wiki.winterco.org/zh/rules/pve/ratting"
+    },
+    {
+      "title": "特殊刷怪规定",
+      "url": "https://wiki.winterco.org/zh/rules/pve/special",
+      "path": "https://wiki.winterco.org/zh/rules/pve/special"
+    },
+    {
+      "title": "挖矿规定",
+      "url": "https://wiki.winterco.org/zh/rules/pve/mining",
+      "path": "https://wiki.winterco.org/zh/rules/pve/mining"
+    },
+    {
+      "title": "ESS 规则",
+      "url": "https://wiki.winterco.org/zh/rules/pve/ess",
+      "path": "https://wiki.winterco.org/zh/rules/pve/ess"
+    },
+    {
+      "title": "超期生产临时准则",
+      "url": "https://wiki.winterco.org/zh/rules/pve/crab",
+      "path": "https://wiki.winterco.org/zh/rules/pve/crab"
+    },
+    {
+      "title": "公共月矿采掘法规",
+      "url": "https://wiki.winterco.org/zh/rules/pve/public_moons",
+      "path": "https://wiki.winterco.org/zh/rules/pve/public_moons"
+    },
+    {
+      "title": "月亮租赁法规",
+      "url": "https://wiki.winterco.org/zh/rules/pve/moon_renting",
+      "path": "https://wiki.winterco.org/zh/rules/pve/moon_renting"
+    },
+    {
+      "title": "势力战争",
+      "url": "https://wiki.winterco.org/zh/rules/pve/fw",
+      "path": "https://wiki.winterco.org/zh/rules/pve/fw"
+    }
+  ],
+  "贸易": [
+    {
+      "title": "市场条例",
+      "url": "https://wiki.winterco.org/zh/rules/trade/markets",
+      "path": "https://wiki.winterco.org/zh/rules/trade/markets"
+    },
+    {
+      "title": "超旗出口条例",
+      "url": "https://wiki.winterco.org/zh/rules/trade/supercap_export",
+      "path": "https://wiki.winterco.org/zh/rules/trade/supercap_export"
+    },
+    {
+      "title": "超网博彩条例",
+      "url": "https://wiki.winterco.org/zh/rules/trade/hypernets",
+      "path": "https://wiki.winterco.org/zh/rules/trade/hypernets"
+    }
+  ],
+  "建筑": [
+    {
+      "title": "堡垒条例",
+      "url": "https://wiki.winterco.org/zh/rules/structure/citadels",
+      "path": "https://wiki.winterco.org/zh/rules/structure/citadels"
+    },
+    {
+      "title": "精炼厂法规",
+      "url": "https://wiki.winterco.org/zh/rules/structure/refineries",
+      "path": "https://wiki.winterco.org/zh/rules/structure/refineries"
+    },
+    {
+      "title": "天钩等建筑",
+      "url": "https://wiki.winterco.org/zh/rules/structure/pocos",
+      "path": "https://wiki.winterco.org/zh/rules/structure/pocos"
+    }
+  ],
+  "其他": [
+    {
+      "title": "视频与直播",
+      "url": "https://wiki.winterco.org/zh/rules/other/videos_and_lives",
+      "path": "https://wiki.winterco.org/zh/rules/other/videos_and_lives"
+    },
+    {
+      "title": "Mumble 纪律",
+      "url": "https://wiki.winterco.org/zh/rules/other/mumble",
+      "path": "https://wiki.winterco.org/zh/rules/other/mumble"
+    },
+    {
+      "title": "市场条例",
+      "url": "https://wiki.winterco.org/zh/rules/trade/markets",
+      "path": "https://wiki.winterco.org/zh/rules/trade/markets"
+    },
+    {
+      "title": "联盟管理",
+      "url": "https://wiki.winterco.org/zh/start",
+      "path": "https://wiki.winterco.org/zh/start"
+    },
+    {
+      "title": "联盟管理",
+      "url": "https://wiki.winterco.org/zh/leadership",
+      "path": "https://wiki.winterco.org/zh/leadership"
+    }
+  ]
+}
