@@ -1,12 +1,13 @@
 # FRT 数据收集输出文件总览
 
-> 生成时间: 2026-03-11 11:31:12
+> 生成时间: 2026-03-11 11:55:53
 
 ## 文件统计
 
-- **总文件数**: 30
+- **总文件数**: 32
 - **联盟规则文件**: 29
 - **联盟公司文件**: 1
+- **Excel数据文件**: 2
 
 ## 文件列表
 
@@ -52,12 +53,21 @@
 | frt_corp_公司总揽.md | 公司总揽 |
 
 
+### Excel数据文件 (frt_excel_*)
+
+| 文件名 | 说明 |
+|--------|------|
+| frt_excel_FRTQQ群统计-工作表1.md | FRTQQ群统计-工作表1 |
+| frt_excel_汇总文档.md | 汇总文档 |
+
+
 ## 数据来源
 
 - **联盟规则**: https://wiki.winterco.org/zh/rules/start
 - **联盟公司**: 
   - https://wiki.winterco.org/zh/corps/start
   - https://evemaps.dotlan.net/alliance/Fraternity./corporations
+- **Excel数据**: excel/ 文件夹中的 CSV/Excel 文件
 
 ---
 

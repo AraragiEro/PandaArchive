@@ -4,15 +4,16 @@
 FRT 数据收集主运行脚本
 
 功能：
-1. 运行所有子脚本（规则爬虫、公司爬虫）
+1. 运行所有子脚本（规则爬虫、公司爬虫、Excel处理器）
 2. 收集所有生成的 Markdown 文件
-3. 按类型添加前缀（frt_rule_*、frt_corp_*）
+3. 按类型添加前缀（frt_rule_*、frt_corp_*、frt_excel_*）
 4. 统一输出到 output/ 文件夹
 
 使用方法:
     python run_all.py              # 运行所有脚本
     python run_all.py --skip-rules # 跳过规则爬取
     python run_all.py --skip-corp  # 跳过公司爬取
+    python run_all.py --skip-excel # 跳过Excel处理
 """
 
 import os
@@ -47,6 +48,13 @@ class FRTCollector:
                 "prefix": "frt_corp_",
                 "name": "联盟公司",
             },
+            "excel": {
+                "script": "process_excel.py",
+                "output_dir": "excel_output",
+                "prefix": "frt_excel_",
+                "name": "Excel数据",
+                "check_exists": False,  # Excel处理是可选的
+            },
         }
 
         # 收集统计
@@ -61,12 +69,23 @@ class FRTCollector:
             Tuple[str, Path, str]
         ] = []  # (type, source_path, target_name)
 
-    def run_script(self, script_name: str, description: str) -> bool:
+    def run_script(
+        self, script_name: str, description: str, check_exists: bool = True
+    ) -> bool:
         """运行单个脚本"""
         print(f"\n{'=' * 60}")
         print(f"正在运行: {description}")
         print(f"脚本: {script_name}")
         print(f"{'=' * 60}")
+
+        # 检查脚本是否存在
+        if not Path(script_name).exists():
+            if check_exists:
+                print(f"[FAIL] 脚本不存在: {script_name}")
+                return False
+            else:
+                print(f"[SKIP] 脚本不存在，跳过: {script_name}")
+                return True  # 可选脚本不存在不算失败
 
         try:
             # 使用当前 Python 解释器运行脚本
@@ -99,21 +118,6 @@ class FRTCollector:
         except Exception as e:
             print(f"[FAIL] {description} 运行出错: {e}")
             return False
-            if result.returncode == 0:
-                print(f"✓ {description} 运行成功")
-                return True
-            else:
-                print(f"✗ {description} 运行失败 (返回码: {result.returncode})")
-                if result.stderr:
-                    print(f"错误信息: {result.stderr[:500]}")
-                return False
-
-        except subprocess.TimeoutExpired:
-            print(f"✗ {description} 运行超时")
-            return False
-        except Exception as e:
-            print(f"✗ {description} 运行出错: {e}")
-            return False
 
     def collect_files(
         self, source_dir: Path, prefix: str, file_type: str
@@ -143,7 +147,7 @@ class FRTCollector:
                 new_name = f"{prefix}{relative_path.name}"
 
             # 清理文件名中的非法字符
-            new_name = re.sub(r'[<>:"/\\|?*]', "_", new_name)
+            new_name = re.sub(r'[<>"/\\|?*]', "_", new_name)
             new_name = re.sub(r"\s+", "_", new_name)  # 空格替换为下划线
 
             collected.append((file_type, file_path, new_name))
@@ -169,11 +173,6 @@ class FRTCollector:
                 print(f"  [OK] [{file_type}] {source_path.name} -> {target_name}")
             except Exception as e:
                 print(f"  [FAIL] [{file_type}] 复制失败 {source_path.name}: {e}")
-                shutil.copy2(source_path, target_path)
-                copied_count += 1
-                print(f"  ✓ [{file_type}] {source_path.name} -> {target_name}")
-            except Exception as e:
-                print(f"  ✗ [{file_type}] 复制失败 {source_path.name}: {e}")
 
         return copied_count
 
@@ -182,7 +181,7 @@ class FRTCollector:
         index_file = self.output_dir / "README.md"
 
         # 按类型分组
-        files_by_type = {"rules": [], "corp": [], "other": []}
+        files_by_type = {"rules": [], "corp": [], "excel": [], "other": []}
 
         for file_type, source_path, target_name in self.collected_files:
             if file_type in files_by_type:
@@ -199,6 +198,7 @@ class FRTCollector:
 - **总文件数**: {len(self.collected_files)}
 - **联盟规则文件**: {len(files_by_type["rules"])}
 - **联盟公司文件**: {len(files_by_type["corp"])}
+- **Excel数据文件**: {len(files_by_type["excel"])}
 
 ## 文件列表
 
@@ -229,6 +229,20 @@ class FRTCollector:
             )
             content += f"| {filename} | {desc} |\n"
 
+        content += f"""
+
+### Excel数据文件 (frt_excel_*)
+
+| 文件名 | 说明 |
+|--------|------|
+"""
+
+        for filename in sorted(files_by_type["excel"]):
+            desc = (
+                filename.replace("frt_excel_", "").replace(".md", "").replace("_", " ")
+            )
+            content += f"| {filename} | {desc} |\n"
+
         content += """
 
 ## 数据来源
@@ -237,6 +251,7 @@ class FRTCollector:
 - **联盟公司**: 
   - https://wiki.winterco.org/zh/corps/start
   - https://evemaps.dotlan.net/alliance/Fraternity./corporations
+- **Excel数据**: excel/ 文件夹中的 CSV/Excel 文件
 
 ---
 
@@ -267,7 +282,11 @@ class FRTCollector:
         self.output_dir.mkdir(exist_ok=True)
 
     def run(
-        self, skip_rules: bool = False, skip_corp: bool = False, no_clean: bool = False
+        self,
+        skip_rules: bool = False,
+        skip_corp: bool = False,
+        skip_excel: bool = False,
+        no_clean: bool = False,
     ):
         """主运行流程"""
         print("=" * 60)
@@ -284,10 +303,13 @@ class FRTCollector:
             scripts_to_run.append(("rules", self.scripts["rules"]))
         if not skip_corp:
             scripts_to_run.append(("corp", self.scripts["corp"]))
+        if not skip_excel:
+            scripts_to_run.append(("excel", self.scripts["excel"]))
 
         for key, config in scripts_to_run:
             self.stats["scripts_run"] += 1
-            success = self.run_script(config["script"], config["name"])
+            check_exists = config.get("check_exists", True)
+            success = self.run_script(config["script"], config["name"], check_exists)
             if success:
                 self.stats["scripts_success"] += 1
 
@@ -311,6 +333,14 @@ class FRTCollector:
                 "corp",
             )
             self.collected_files.extend(corp_files)
+
+        if not skip_excel:
+            excel_files = self.collect_files(
+                Path(self.scripts["excel"]["output_dir"]),
+                self.scripts["excel"]["prefix"],
+                "excel",
+            )
+            self.collected_files.extend(excel_files)
 
         self.stats["files_collected"] = len(self.collected_files)
 
@@ -349,6 +379,7 @@ def main():
   python run_all.py              # 运行所有脚本
   python run_all.py --skip-rules # 跳过规则爬取
   python run_all.py --skip-corp  # 跳过公司爬取
+  python run_all.py --skip-excel # 跳过Excel处理
   python run_all.py --no-clean   # 不清空输出目录
         """,
     )
@@ -356,6 +387,8 @@ def main():
     parser.add_argument("--skip-rules", action="store_true", help="跳过规则爬虫脚本")
 
     parser.add_argument("--skip-corp", action="store_true", help="跳过公司爬虫脚本")
+
+    parser.add_argument("--skip-excel", action="store_true", help="跳过Excel处理脚本")
 
     parser.add_argument(
         "--no-clean", action="store_true", help="不清空输出目录（默认会清空）"
@@ -367,13 +400,16 @@ def main():
 
     args = parser.parse_args()
 
-    if args.skip_rules and args.skip_corp:
+    if args.skip_rules and args.skip_corp and args.skip_excel:
         print("错误: 不能同时跳过所有脚本")
         return
 
     collector = FRTCollector(output_dir=args.output)
     collector.run(
-        skip_rules=args.skip_rules, skip_corp=args.skip_corp, no_clean=args.no_clean
+        skip_rules=args.skip_rules,
+        skip_corp=args.skip_corp,
+        skip_excel=args.skip_excel,
+        no_clean=args.no_clean,
     )
 
 
