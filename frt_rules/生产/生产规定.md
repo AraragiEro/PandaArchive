@@ -2,7 +2,7 @@
 
 > 来源: [FRT Wiki](https://wiki.winterco.org/zh/rules/pve/start)
 > 分类: 生产
-> 爬取时间: 2026-03-11 10:49:53
+> 爬取时间: 2026-04-27 01:04:10
 
 ---
 
@@ -24,7 +24,7 @@
 - Teams
 
 [最近更改](https://wiki.winterco.org/feed.xml?ns=zh:rules:pve)
-[Permalink](https://wiki.winterco.org/zh/rules/pve/start?rev=1767755618)
+[Permalink](https://wiki.winterco.org/zh/rules/pve/start?rev=1774111463)
 
 # 生产规定
 
@@ -38,7 +38,6 @@
 - Siberian Squads<SB-SQ>.
 - Test Alliance Please Ignore<TEST>.
 - Blades Of Grass<2GTHR>.
-- Hold My Probs<PROB>.
 - Insidious.<EVIL.>.
 - No Visual<NO>.
 - Northern Coalition.<NC>.
@@ -59,8 +58,6 @@
 `TEST`
 `Blades Of Grass`
 `2GTHR`
-`Hold My Probs`
-`PROB`
 `Insidious.`
 `EVIL.`
 `No Visual`
@@ -75,7 +72,8 @@
 
 #### 允许 PvE 区域
 
-- 以下星系中主权宣布基础设施（SOV HUB）所属联盟均为Fraternity.（熊猫头）：Vale of the Silent/静寂谷星域除88G-M4星座和1VK-6BS6QX-NIT-YAU星系以外。Tribute/特步特星域。Geminate/对舞之域星域FRT主权区域。Fade/斐德。Pure Blind/黑渊。Tenal/特纳Branch/血脉
+- 以下星系中主权宣布基础设施（SOV HUB）所属联盟均为Fraternity.（熊猫头）：Vale of the Silent/静寂谷星域除88G-M4星座和1VK-6BS6QX-NIT-YAU星系以外。Tribute/特步特星域。Geminate/对舞之域星域FRT主权区域。
+- 以下星座中在PVE地图中标注属于FRT、限时开放给FRT和WC共享的星系：Fade/斐德。Pure Blind/黑渊。Tenal/特纳Branch/血脉
 - 在以下区域，遵守特殊规则仍可以生产：静寂谷星域的E-8CSQ星座（气云星座），其特殊规则允许所有 WC 主要成员联盟和Corelum Syndicate<CSE> 开采气云。
 
 **均为**
@@ -83,10 +81,6 @@
 - Vale of the Silent/静寂谷星域除88G-M4星座和1VK-6BS6QX-NIT-YAU星系以外。
 - Tribute/特步特星域。
 - Geminate/对舞之域星域FRT主权区域。
-- Fade/斐德。
-- Pure Blind/黑渊。
-- Tenal/特纳
-- Branch/血脉
 
 `Vale of the Silent/静寂谷`
 `88G-M4`
@@ -95,6 +89,11 @@
 `IT-YAU`
 `Tribute/特步特`
 `Geminate/对舞之域`
+- Fade/斐德。
+- Pure Blind/黑渊。
+- Tenal/特纳
+- Branch/血脉
+
 `Fade/斐德`
 `Pure Blind/黑渊`
 `Tenal/特纳`
@@ -110,10 +109,11 @@
 
 - 4-HWWF星系是联盟集结点，禁止任何旗舰PvE 行为。
 - Vale of the Silent/静寂谷星域的1VK-6BS6QX-NIT-YAU星系和88G-M4星座。
-- Branch/血脉星域Insidious.主权星座/Hold My Probs主权星座/PL星座。
-- Tenal/特纳星域PL星座/No Visual主权星座。
+- Branch/血脉PVE地图标注不属于FRT和WC共享的星系。
+- Tenal/特纳PVE地图标注不属于FRT和WC共享的星系。
 - Deklein/德克廉星域。
 - Geminate/对舞之域星域内TEST主权星座。
+- Fade/斐德*Pure Blind/黑渊开放给FRT以外的时间。
 
 `4-HWWF`
 **旗舰**
@@ -126,6 +126,8 @@
 `Tenal/特纳`
 `Deklein/德克廉`
 `Geminate/对舞之域`
+`Fade/斐德`
+`Pure Blind/黑渊`
 上述地区禁止任何 PVE 行为（包括刷怪、挖矿、扫坟、野生死亡等；不含远征 (Escalation) 与任务、空代任务，但从事此类活动时请留存全程录像）；上述地区禁止扫描行为（包括扫洞）。
 
 一经发现，罚款 1B。

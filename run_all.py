@@ -19,12 +19,13 @@ FRT 数据收集主运行脚本
 import os
 import re
 import sys
+import json
 import shutil
 import subprocess
 import argparse
 from pathlib import Path
 from datetime import datetime
-from typing import List, Tuple
+from typing import List, Tuple, Set
 
 
 class FRTCollector:
@@ -68,6 +69,17 @@ class FRTCollector:
         self.collected_files: List[
             Tuple[str, Path, str]
         ] = []  # (type, source_path, target_name)
+
+        # 读取规则爬虫的变更列表（None 表示未知，回退到全量复制）
+        self.changed_rules: Set[str] | None = None
+        rules_changes_file = Path(self.scripts["rules"]["output_dir"]) / ".changes.json"
+        if rules_changes_file.exists():
+            try:
+                with open(rules_changes_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    self.changed_rules = set(data.get("changed_files", []))
+            except Exception:
+                pass
 
     def run_script(
         self, script_name: str, description: str, check_exists: bool = True
@@ -156,15 +168,26 @@ class FRTCollector:
         return collected
 
     def copy_files(self):
-        """将所有收集的文件复制到输出目录"""
+        """将所有收集的文件复制到输出目录（规则文件仅复制变更的）"""
         print(f"\n{'=' * 60}")
         print("正在复制文件到输出目录")
         print(f"输出目录: {self.output_dir.absolute()}")
         print(f"{'=' * 60}")
 
         copied_count = 0
+        skipped_count = 0
 
         for file_type, source_path, target_name in self.collected_files:
+            # 规则文件：若已知变更列表，只复制有变更的文件
+            if file_type == "rules" and self.changed_rules is not None:
+                rel_path = source_path.relative_to(
+                    Path(self.scripts["rules"]["output_dir"])
+                ).as_posix()
+                if rel_path not in self.changed_rules:
+                    print(f"  [SKIP] [{file_type}] 未变更: {target_name}")
+                    skipped_count += 1
+                    continue
+
             target_path = self.output_dir / target_name
 
             try:
@@ -173,6 +196,9 @@ class FRTCollector:
                 print(f"  [OK] [{file_type}] {source_path.name} -> {target_name}")
             except Exception as e:
                 print(f"  [FAIL] [{file_type}] 复制失败 {source_path.name}: {e}")
+
+        if skipped_count:
+            print(f"\n  跳过 {skipped_count} 个未变更的规则文件")
 
         return copied_count
 
@@ -286,15 +312,15 @@ class FRTCollector:
         skip_rules: bool = False,
         skip_corp: bool = False,
         skip_excel: bool = False,
-        no_clean: bool = False,
+        clean: bool = False,
     ):
         """主运行流程"""
         print("=" * 60)
         print("FRT 数据收集主程序")
         print("=" * 60)
 
-        # 1. 清理输出目录
-        if not no_clean:
+        # 1. 清理输出目录（默认保留，显式指定 --clean 才清空）
+        if clean:
             self.clean_output()
 
         # 2. 运行脚本
@@ -380,7 +406,7 @@ def main():
   python run_all.py --skip-rules # 跳过规则爬取
   python run_all.py --skip-corp  # 跳过公司爬取
   python run_all.py --skip-excel # 跳过Excel处理
-  python run_all.py --no-clean   # 不清空输出目录
+   python run_all.py --clean      # 清空输出目录
         """,
     )
 
@@ -391,7 +417,7 @@ def main():
     parser.add_argument("--skip-excel", action="store_true", help="跳过Excel处理脚本")
 
     parser.add_argument(
-        "--no-clean", action="store_true", help="不清空输出目录（默认会清空）"
+        "--clean", action="store_true", help="清空输出目录（默认保留已有文件）"
     )
 
     parser.add_argument(
@@ -409,7 +435,7 @@ def main():
         skip_rules=args.skip_rules,
         skip_corp=args.skip_corp,
         skip_excel=args.skip_excel,
-        no_clean=args.no_clean,
+        clean=args.clean,
     )
 
 

@@ -12,8 +12,8 @@
     "category": "行政"
   },
   "https://wiki.winterco.org/zh/rules/corp/frta": {
-    "hash": "05d6dbf0634e9650d3762bde200f69de",
-    "updated_at": "2026-03-11T10:49:44.548794",
+    "hash": "6ba0f6dd875bd47b7a275fbb429f692d",
+    "updated_at": "2026-04-27T01:04:07.693169",
     "title": "FRTA管理",
     "category": "行政"
   },
@@ -54,8 +54,8 @@
     "category": "军事"
   },
   "https://wiki.winterco.org/zh/rules/pve/start": {
-    "hash": "c8a36fe7dd375ccbdddc1b500e96077e",
-    "updated_at": "2026-03-11T10:49:53.772721",
+    "hash": "5b73a96224826d82f1082e3396795e4b",
+    "updated_at": "2026-04-27T01:04:10.791354",
     "title": "生产规定",
     "category": "生产"
   },
@@ -132,8 +132,8 @@
     "category": "建筑"
   },
   "https://wiki.winterco.org/zh/rules/structure/refineries": {
-    "hash": "0a7c7f21c6c1e110844938fe571e7c9c",
-    "updated_at": "2026-03-11T10:50:12.797061",
+    "hash": "ea86a512785b9b67444fa2857863c174",
+    "updated_at": "2026-04-27T01:04:15.585851",
     "title": "精炼厂法规",
     "category": "建筑"
   },

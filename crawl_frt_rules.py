@@ -59,6 +59,9 @@ class FRTWikiCrawler:
         # 统计信息
         self.stats = {"total": 0, "new": 0, "updated": 0, "skipped": 0, "failed": 0}
 
+        # 本轮发生变更的文件列表（供 run_all.py 使用）
+        self.changed_files: list[str] = []
+
     def load_state(self) -> dict:
         """加载爬取状态"""
         if self.state_file.exists():
@@ -369,7 +372,10 @@ class FRTWikiCrawler:
                 print(f"      更新: {reason}")
 
                 # 保存为 Markdown
-                self.save_to_markdown(category, title, content)
+                saved_path = self.save_to_markdown(category, title, content)
+                if saved_path:
+                    rel_path = saved_path.relative_to(self.output_dir).as_posix()
+                    self.changed_files.append(rel_path)
 
                 # 更新状态
                 if not self.dry_run:
@@ -402,7 +408,21 @@ class FRTWikiCrawler:
         # 5. 保存状态
         self.save_state()
 
-        # 6. 打印统计
+        # 6. 保存变更列表（供 run_all.py 增量复制使用）
+        changes_file = self.output_dir / ".changes.json"
+        if not self.dry_run:
+            with open(changes_file, "w", encoding="utf-8") as f:
+                json.dump(
+                    {
+                        "changed_files": self.changed_files,
+                        "timestamp": datetime.now().isoformat(),
+                    },
+                    f,
+                    ensure_ascii=False,
+                    indent=2,
+                )
+
+        # 7. 打印统计
         print("\n" + "=" * 60)
         print("爬取完成!")
         print(f"总计: {self.stats['total']} 个页面")

@@ -2,7 +2,7 @@
 
 > 来源: [FRT Wiki](https://wiki.winterco.org/zh/rules/structure/refineries)
 > 分类: 建筑
-> 爬取时间: 2026-03-11 10:50:12
+> 爬取时间: 2026-04-27 01:04:15
 
 ---
 
@@ -24,18 +24,15 @@
 - Teams
 
 [最近更改](https://wiki.winterco.org/feed.xml?ns=zh:rules:structure)
-[Permalink](https://wiki.winterco.org/zh/rules/structure/refineries?rev=1661501002)
+[Permalink](https://wiki.winterco.org/zh/rules/structure/refineries?rev=1773497842)
 
 # 精炼厂法规
 
 ## 适用范围
 
-- 本规则只适用于4-HWWF伞区域（包括QFF-O6和A3-RQ3星座）。
+- 本规则适用于FRT主权以及所有实控的NPC00和高低安星系。
 - 仅塔塔拉 (Tatara) 与阿塔诺 (Athanor) 两种建筑受本规则限制。其他建筑可以自设精炼服务，联盟不做规定。
 
-`4-HWWF`
-`QFF-O6`
-`A3-RQ3`
 `Tatara`
 `Athanor`
 

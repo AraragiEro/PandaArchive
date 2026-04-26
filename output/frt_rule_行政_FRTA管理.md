@@ -2,7 +2,7 @@
 
 > 来源: [FRT Wiki](https://wiki.winterco.org/zh/rules/corp/frta)
 > 分类: 行政
-> 爬取时间: 2026-03-11 10:49:44
+> 爬取时间: 2026-04-27 01:04:07
 
 ---
 
@@ -24,16 +24,16 @@
 - Teams
 
 [最近更改](https://wiki.winterco.org/feed.xml?ns=zh:rules:corp)
-[Permalink](https://wiki.winterco.org/zh/rules/corp/frta?rev=1759895032)
+[Permalink](https://wiki.winterco.org/zh/rules/corp/frta?rev=1774932645)
 
 ## FRTA管理
 
-* F.A.X联盟有声望不允许下建筑 要求挂靠母团 母团负连带责任（要求ESI）。
-
-- 百税的FRTA公司不需要出勤不能刷怪生产，其他与正常FRT公司一样。 （公司设置要求100%如果被发现使用百税公司生产会被联盟税务局重拳出鸡）
-- 不设置百税的FRTA公司，需要出勤可以刷怪，税率7.5%，其他权益和其他正常FRT公司一样。（出勤单独计算和母团无关）
+- FRTA联盟拥有FRT蓝声望。
+- FRTA公司不允许下建筑，公司必须设置为不接受转让建筑。
+- FRTA公司要求挂靠FRT主公司，主公司负连带责任（要求ESI）。
+- FRTA公司的联盟税率为7.5%，其他权益和其他正常FRT公司一样。（出勤单独计算和母团无关）
+- FRTA公司的最低税费为300M。
 - 你必须拥有FRT主联盟账号才可以使用任何的FRT IT服务。
-- 百税指ISK和LP都需要设置成百税。
 - F.A.X联盟的申请表：
 - 【腾讯文档】凛冬附属军团登记表https://docs.qq.com/form/page/DY1NJSHFpS0FvU2Vv#/
 
